@@ -42,7 +42,6 @@
      <Compile Include="Assets\Script\PlayerLife.cs" />
      <Compile Include="Assets\Script\ItemCollector.cs" />
      <Compile Include="Assets\Script\GunScript.cs" />
-     <Compile Include="Assets\Script\Rotate.cs" />
      <Compile Include="Assets\Script\EnemyPlayer.cs" />
      <Compile Include="Assets\Script\HealthBarScript.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

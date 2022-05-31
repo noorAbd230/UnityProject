@@ -6,7 +6,7 @@ public class EnemyPlayer : MonoBehaviour
 {
 
      Rigidbody2D rb;
-     public BoxCollider2D box;
+     //public PolygonCollider2D box;
     public float walkSpeed= 1f;
 
 
@@ -38,6 +38,10 @@ public class EnemyPlayer : MonoBehaviour
 
 
     void Update(){
+            if(gameObject.name=="SnowwhiteEnemy"){
+               rb.AddForce(new Vector2(0, 2f)); 
+            }
+        
             if(isFacingRight()){
                 rb.velocity = new Vector2(walkSpeed,0f);
             }else{
@@ -50,7 +54,7 @@ public class EnemyPlayer : MonoBehaviour
     }
 
 
-    private void OnTriggerExit2D(Collider2D collision){
+    private void OnTriggerEnter2D(Collider2D collision){
         Debug.Log(collision.gameObject);
          transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)),transform.localScale.y);
     }

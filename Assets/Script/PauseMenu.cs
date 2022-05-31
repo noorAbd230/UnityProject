@@ -20,11 +20,13 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void PauseGame(){
+        Debug.Log("Pause clicked");
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 
    public void ResumeGame(){
+       Debug.Log("Resume clicked");
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
