@@ -9,7 +9,7 @@ public class GunScript : MonoBehaviour
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
     
-    private float speed = 200f;
+    private float speed = 20f;
     public int bulletAmount = 5;
     public Text eggTxt;
     [SerializeField] AudioSource collectionSound;
