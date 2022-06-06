@@ -17,7 +17,7 @@ public class PlayerLife : MonoBehaviour
     }
     private void Update()
     {
-        if (transform.position.y < -4f && !dead)
+        if (transform.position.y < -6f && !dead)
         {
             Die();
         }
@@ -46,10 +46,10 @@ public class PlayerLife : MonoBehaviour
             currentHP+=10;
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            currentHP-=20;
-        }
+        // if (collision.gameObject.CompareTag("Enemy"))
+        // {
+        //     currentHP-=20;
+        // }
 
         if (collision.gameObject.CompareTag("End"))
         {

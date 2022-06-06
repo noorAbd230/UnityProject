@@ -28,13 +28,13 @@ public class PlayerMovment : MonoBehaviour
         float value = Input.GetAxis("Horizontal");
         transform.Translate(new Vector2(value, 0) * playerSpeed * Time.deltaTime);
 
-        // if (value > 0)
-        // {
-        //     transform.localScale = new Vector2(1, 1);
-        // }else if (value < 0)
-        // {
-        //     transform.localScale = new Vector2(-1, 1);
-        // }
+        if (value > 0)
+        {
+            transform.localScale = new Vector2(1, 1);
+        }else if (value < 0)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
 
         if (value != 0 && rb.velocity.y == 0)
         {

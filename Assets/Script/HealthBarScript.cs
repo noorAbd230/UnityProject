@@ -15,13 +15,12 @@ public class HealthBarScript : MonoBehaviour
 
     void Start() {
         fill = GetComponent<Image>();
-        if(playerLife!=null)
+        playerLife = GameObject.Find("MainPlayer").GetComponent<PlayerLife>();
         playerLife.currentHP = playerLife.maxHP;
     }
 
 
     void Update() { 
-         if(playerLife != null)
             percentage = (float) playerLife.currentHP/playerLife.maxHP;
             fill.fillAmount = percentage;
     }

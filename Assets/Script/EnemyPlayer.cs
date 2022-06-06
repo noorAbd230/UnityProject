@@ -12,6 +12,7 @@ public class EnemyPlayer : MonoBehaviour
 
     public float health = 100f;
     public GameObject deadEffect;
+    public PlayerLife playerLife;
 
      private bool created = false;
     //private Animator enemyAnimator ;
@@ -34,11 +35,12 @@ public class EnemyPlayer : MonoBehaviour
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
+        playerLife = GameObject.Find("MainPlayer").GetComponent<PlayerLife>();
     }
 
 
     void Update(){
-            if(gameObject.name=="SnowwhiteEnemy"){
+            if(gameObject.name=="flyEnemy"){
                rb.AddForce(new Vector2(0, 2f)); 
             }
         
@@ -57,6 +59,9 @@ public class EnemyPlayer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         Debug.Log(collision.gameObject);
          transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)),transform.localScale.y);
+         if(collision.gameObject.name == "MainPlayer"){
+               playerLife.currentHP -=20;
+         }
     }
 
     //   public float speed;
